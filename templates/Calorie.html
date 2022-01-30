@@ -1,0 +1,70 @@
+<!doctype html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Calorie Finder</title>
+	
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<h1>CALORIE FINDER</h1>
+
+<body>
+
+<div class="main">
+	<form class="pure-form" method="POST" action="/">
+	<b>Weight in kgs:</b><br>
+	<input type="text" name="weight"><br><br>
+<b>	Height in cms:</b><br>
+	<input type="text" name="height"><br><br>
+  <b>Age:</b><br>
+	<input type="text" name="age"><br>
+  <legend><b>Choose your gender:</b></legend>
+  Male:
+  <input type="radio" name="gender" id="male" value="male" >
+  Female:<input type="radio" name="gender" id="female" value="female"><br><br>
+  <legend><b>Select your activity:</b></legend>
+  Outdoor Games:
+  <input type="radio" name="activity" id="Outdoor Games" value="Outdoor Games"><br>
+  Running:
+  <input type="radio" name="activity" id="Running" value="Running"><br>
+  Walking:
+  <input type="radio" name="activity" id="Walking" value="Walking"><br>
+  Cardio Gym:
+  <input type="radio" name="activity" id="cardi-gym-activities" value="cardi-gym-activities"><br>
+  Cycling:
+  <input type="radio" name="activity" id="Cycling" value="Cycling"><br>
+  Swimming:
+  <input type="radio" name="activity" id="swimming" value="swimming"><br>
+  Weight:
+  <input type="radio" name="activity" id="weight" value="weight" ><br><br>
+ <b> Duration in min:</b>
+	<input type="text" name="duration"><br><br>
+  <b>Intensity:</b><br>
+  Heavy:
+  <input type="radio" name="intensity" id="heavy" value="heavy"><br>
+  Moderate:
+  <input type="radio" name="intensity" id="moderate" value="moderate"><br>
+  Light:
+  <input type="radio" name="intensity" id="light" value="light"><br><br>
+	<button type="submit" class="pure-button pure-button-primary" value="Submit">Submit</button>
+	</form>
+</div>
+
+<br>
+
+<div class="main">
+	{% if calorie %}
+       {% print("Your Calorie burnt is {}.".format(calorie)) %}
+	{% endif %}
+</div>
+
+ 
+
+</body>
+
